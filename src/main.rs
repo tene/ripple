@@ -3,10 +3,10 @@
 //! cargo run --features="event-stream" --example event-stream-tokio
 
 use anyhow;
-use ripple::UI;
+use ripple::App;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let mut ui = UI;
-    ui.run().await
+    let mut app = App::new()?;
+    app.run().await
 }
